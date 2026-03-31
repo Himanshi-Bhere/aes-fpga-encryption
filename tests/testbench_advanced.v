@@ -60,20 +60,20 @@ initial begin
     keys[1]   = 128'h61646974690000000000000000000000;
     expected[1] = 128'h29dee3c33b8694f4f6ee8be195bad86f;
 
-    // Block 2: KISHOR
+    // Block 2: KISHORSIR
     blocks[2] = 128'h00112233445566778899aabbccddeeff;
-    keys[2]   = 128'h6b6973686f7200000000000000000000;
-    expected[2] = 128'h10841c518e736dd065e9e9e6b0c7b502;
+    keys[2]   = 128'h6b6973686f7273697200000000000000;
+    expected[2] = 128'hfe48f3df411445cbdedf0745e9daab70;
 
-    // Block 3: VEDANT
+    // Block 3: AKANSHA
     blocks[3] = 128'h00112233445566778899aabbccddeeff;
-    keys[3]   = 128'h766564616e7400000000000000000000;
-    expected[3] = 128'hcc32977513c98aafdae68ee4f42d47b7;
+    keys[3]   = 128'h616b616e736861000000000000000000;
+    expected[3] = 128'hb6c285a713392bc56dfc88ab96f6a496;
 
-    // Block 4: REFERENCE
-    blocks[4] = 128'h00000000000000000000000000000000;
-    keys[4]   = 128'h00000000000000000000000000000000;
-    expected[4] = 128'h66e94bd4ef8a2c3b884cfa59ca342b2e;
+    // Block 4: REVATI
+    blocks[4] = 128'h00112233445566778899aabbccddeeff;
+    keys[4]   = 128'h72657661746900000000000000000000;
+    expected[4] = 128'hfdb19dae3ff4dde19b51d42e1f90ea1b;
 
     #20 reset = 0;
 
@@ -95,9 +95,9 @@ initial begin
         case(block_num)
             0: $display("Block %0d: HIMANSHI Key Encryption", block_num + 1);
             1: $display("Block %0d: ADITI Key Encryption", block_num + 1);
-            2: $display("Block %0d: KISHOR Key Encryption", block_num + 1);
-            3: $display("Block %0d: VEDANT Key Encryption", block_num + 1);
-            4: $display("Block %0d: REFERENCE (All Zeros)", block_num + 1);
+            2: $display("Block %0d: KISHORSIR Key Encryption", block_num + 1);
+            3: $display("Block %0d: AKANSHA Key Encryption", block_num + 1);
+            4: $display("Block %0d: REVATI Key Encryption", block_num + 1);
         endcase
 
         $display("  Key (HEX): %h", keys[block_num]);
