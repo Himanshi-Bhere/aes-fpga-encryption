@@ -1,0 +1,19 @@
+# Auto detect line endings and normalize
+* text=auto
+
+# Verilog files
+*.v text eol=lf
+*.verilog text eol=lf
+
+# Documentation
+*.md text eol=lf
+README text eol=lf
+
+# Scripts
+*.sh text eol=lf
+*.bash text eol=lf
+*.ps1 text eol=crlf
+
+# Simulation files (binary-like, don't convert)
+*.vvp binary
+*.vcd binary

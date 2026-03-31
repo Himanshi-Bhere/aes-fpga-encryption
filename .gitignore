@@ -1,0 +1,33 @@
+# Python environment
+.venv/
+env/
+venv/
+*.pyc
+__pycache__/
+
+# Simulation outputs (can be regenerated)
+*.vvp
+*.vcd
+.wave*
+
+# Build artifacts
+*.o
+*.a
+*.so
+
+# IDE/Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS files
+Thumbs.db
+.directory
+
+# Temporary files
+*.tmp
+*.temp
+*.log
