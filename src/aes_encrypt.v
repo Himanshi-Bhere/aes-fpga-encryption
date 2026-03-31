@@ -2,7 +2,7 @@ module aes_encrypt(
     input         clk, reset, start,
     input  [127:0] data_in,
     input  [127:0] key,
-    output reg [127:0] data_out,
+    output wire [127:0] data_out,
     output reg         done
 );
 
@@ -167,18 +167,14 @@ wire [127:0] final_state = {
     fsr[12],fsr[13],fsr[14], fsr[15]
 } ^ rk[10];
 
-// ── Register output on start pulse ───────────────────────────────────────────
+// ── Combinational output + registered done flag ───────────────────────────────
+assign data_out = final_state;  // Output is always valid (combinational)
+
 always @(posedge clk or posedge reset) begin
     if(reset) begin
-        data_out <= 0;
-        done     <= 0;
+        done <= 0;
     end else begin
-        if(start) begin
-            data_out <= final_state;
-            done     <= 1;
-        end else begin
-            done <= 0;
-        end
+        done <= start;  // done pulse follows start, one cycle later
     end
 end
 
